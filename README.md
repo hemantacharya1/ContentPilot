@@ -59,7 +59,7 @@ Designed to convert "what you consumed + your unique perspective" → into "auth
 - Tools like ChatGPT aren't integrated into creator workflows and lack personalization
 - Existing AI writers (Copy.ai, Jasper) don't connect content consumption with publishing or maintain voice consistency
 
-ContentPilot bridges these gaps, automating the process from input → personalized output → publication while maintaining authentic voice and narrative continuity.
+ContentPilot bridges these gaps, automating the process from input → personalized output → publication while maintaining authentic voice and narrative continuity. [Quick Preview](https://voice-scribe-weave.lovable.app/)
 
 ---
 
