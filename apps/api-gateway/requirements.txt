@@ -1,0 +1,15 @@
+# Core FastAPI Framework
+fastapi==0.115.4             # The main web framework for building your API.
+uvicorn==0.32.0              # The high-performance ASGI server that runs your FastAPI application.
+
+# Supabase & Authentication
+supabase==2.9.1              # The official Python client library for interacting with all of Supabase's features (Auth, Database, etc.).
+python-jose==3.3.0           # Essential for securely decoding the JWTs (JSON Web Tokens) that Supabase provides upon login. This is a critical security component.
+
+# Configuration & Data Validation
+pydantic==2.9.2              # Used by FastAPI for data validation, serialization, and creating the `schemas`.
+pydantic-settings==2.6.1     # Allows you to load configuration from environment variables (.env files) into a validated Pydantic model.
+python-dotenv==1.0.1         # The underlying library used by pydantic-settings to read the .env file.
+
+# Optional but Recommended for Production
+gunicorn==22.0.0             # A production-grade web server gateway. While uvicorn can run the app alone, gunicorn is often used to manage multiple uvicorn worker processes, providing better concurrency and robustness in production.
