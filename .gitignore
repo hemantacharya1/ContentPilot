@@ -1,72 +1,65 @@
-# Python
+# ===================================================================
+#   Comprehensive .gitignore for Python/FastAPI & JS/Vite Monorepo
+# ===================================================================
+
+# === Environment Variables ===
+# Ignore all .env files, but DO commit the example file for others.
+.env*
+!.env.example
+!.env.ci
+
+# === Python (FastAPI, Celery, etc.) ===
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Byte-compiled / optimized / C files
 __pycache__/
 *.py[cod]
 *$py.class
-*.so
-.Python
+
+# Build and distribution artifacts
 build/
-develop-eggs/
 dist/
-downloads/
-eggs/
-.eggs/
-lib/
-lib64/
-parts/
 sdist/
-var/
-wheels/
+eggs/
 *.egg-info/
-.installed.cfg
 *.egg
-MANIFEST
-.env
-.venv
-env/
-venv/
-ENV/
+
+# Testing & Coverage
 .pytest_cache/
 .coverage
 htmlcov/
+coverage.xml
 
-# Node
+# === Frontend (Node.js, Vite, React) ===
+# Dependencies
 node_modules/
-.next/
-out/
-.nuxt
-dist/
-.cache/
-.env.local
-.env.*.local
+
+# Vite specific cache
+.vite/
+
+# Build output
+# The `dist` directory is already ignored above, which also covers Vite's build output.
+
+# Debug logs
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 .pnpm-debug.log*
 
-# IDEs and editors
-.idea/
-.vscode/
-*.swp
-*.swo
-.DS_Store
-Thumbs.db
-
-# Project specific
-.env*
-!.env.example
-*.log
-uploads/
-.vercel
-.turbo
-.contentlayer
-.cache
+# Next.js & Storybook (Good to have for future-proofing)
+.next/
+out/
 storybook-static/
 
-# Database
-*.sqlite3
-*.db
+# Monorepo tooling cache
+.turbo/
 
-# AI/ML specific
+
+# === AI / ML ===
+# Ignore large model files and generated data
 models/
 *.ckpt
 *.pth
@@ -74,7 +67,9 @@ models/
 vector_store/
 embeddings/
 
-# Infrastructure
+
+# === Infrastructure (Terraform) ===
+# Ignore local Terraform state and configuration files
 .terraform/
 *.tfstate
 *.tfstate.*
@@ -82,16 +77,41 @@ embeddings/
 terraform.rc
 *.tfvars
 
-# Testing and coverage
-coverage/
-.nyc_output/
-.cypress/
-cypress/videos/
-cypress/screenshots/
 
-# Misc
+# === IDE & Editor Config ===
+# JetBrains IDEs (PyCharm, WebStorm, etc.)
+.idea/
+
+# VSCode
+.vscode/
+
+# Vim
+*.swp
+*.swo
+
+
+# === OS Generated Files ===
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
+
+
+# === Other Generated Files ===
+# Logs
+*.log
+*.log.*
+
+# User-uploaded content
+uploads/
+
+# SQLite databases
+*.sqlite3
+*.db
+db.sqlite3
+
+# Temporary files
 *.bak
 *.tmp
 *.temp
-.DS_Store
-Thumbs.db 
