@@ -117,3 +117,5 @@ db.sqlite3
 *.temp
 
 .ruff_cache/
+.husky/
+.github/
