@@ -13,3 +13,4 @@ python-dotenv==1.0.1         # The underlying library used by pydantic-settings 
 
 # Optional but Recommended for Production
 gunicorn==22.0.0             # A production-grade web server gateway. While uvicorn can run the app alone, gunicorn is often used to manage multiple uvicorn worker processes, providing better concurrency and robustness in production.
+email_validator==2.2.0
