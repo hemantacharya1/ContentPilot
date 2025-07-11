@@ -1,4 +1,13 @@
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
+import { Menu } from "lucide-react";
+import {
+  Sheet,
+  SheetContent,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+} from "@/components/ui/sheet";
 
 const Header = () => {
   return (
@@ -7,26 +16,43 @@ const Header = () => {
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
           <div className="flex items-center">
-            <h1 className="text-2xl font-bold text-gradient">
+            <Link to="/" className="text-2xl font-bold text-gradient">
               ContentPilot
-            </h1>
+            </Link>
           </div>
 
-          {/* Navigation */}
+          {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-2">
-            <Button variant="ghost" className="text-muted-foreground hover:text-foreground">
-              Log In
+            <Button variant="ghost" className="text-muted-foreground hover:text-foreground" asChild>
+              <Link to="/login">Log In</Link>
             </Button>
-            <Button className="btn-hero-primary">
-              Sign Up Free
+            <Button className="btn-hero-primary" asChild>
+              <Link to="/signup">Sign Up Free</Link>
             </Button>
           </nav>
 
-          {/* Mobile menu button - you can expand this later */}
+          {/* Mobile menu */}
           <div className="md:hidden">
-            <Button variant="ghost" size="sm">
-              Menu
-            </Button>
+            <Sheet>
+              <SheetTrigger asChild>
+                <Button variant="ghost" size="sm">
+                  <Menu className="h-5 w-5" />
+                </Button>
+              </SheetTrigger>
+              <SheetContent>
+                <SheetHeader>
+                  <SheetTitle>ContentPilot</SheetTitle>
+                </SheetHeader>
+                <div className="mt-8 flex flex-col gap-4">
+                  <Button variant="ghost" className="w-full justify-start" asChild>
+                    <Link to="/login">Log In</Link>
+                  </Button>
+                  <Button className="w-full" asChild>
+                    <Link to="/signup">Sign Up Free</Link>
+                  </Button>
+                </div>
+              </SheetContent>
+            </Sheet>
           </div>
         </div>
       </div>
