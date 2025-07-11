@@ -115,3 +115,7 @@ db.sqlite3
 *.bak
 *.tmp
 *.temp
+
+.ruff_cache/
+.husky/
+.github/
